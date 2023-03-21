@@ -1,0 +1,82 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>Install | RasPwn OS</title>
+    	
+	<link rel="stylesheet" href="http://raspwn.org/themes/simpletwo/css/style.css" type="text/css">
+
+    <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-53260474-2', 'auto');
+            ga('send', 'pageview');
+    </script>
+</head>
+
+
+<body>
+<div class="layout">
+	<div id="header">
+		<a href="http://raspwn.org/index">RasPwn OS</a>
+	</div>
+	<div id="navbar">
+		<ul class="nav">
+							<li>
+					<a href="http://raspwn.org/index">Home </a>
+				</li>
+							<li>
+					<a href="http://raspwn.org/contribute">Contribute </a>
+				</li>
+							<li>
+					<a href="http://raspwn.org/documentation">Documentation </a>
+				</li>
+							<li>
+					<a href="http://raspwn.org/donate">Donate </a>
+				</li>
+							<li id="active">
+					<a href="http://raspwn.org/install">Install  &laquo; </a>
+				</li>
+					</ul>
+	</div>
+	<div id="content">
+		<div class="inner">
+			<h1>Install  </h1>
+<p>You Will Need:</p>
+<ul>
+<li>A Raspberry Pi 3b (or a Pi 2b with hostapd compatible Wifi adapter)</li>
+<li>A 4GB or larger Micro-SD card (Class 10 recommended)</li>
+<li>A 5V Micro-USB power supply for the Raspberry Pi</li>
+<li>A computer to flash the SD card (and to pen-test from)</li>
+</ul>
+<p>First you must download the latest RasPwn image and extract it. (7z or zip file available)</p>
+<ul>
+<li><a href="https://github.com/alphacharlie/RasPwn/releases/download/v0.12g/raspwn-release.zip">Download as ZIP Archive</a></li>
+<li><a href="https://github.com/alphacharlie/RasPwn/releases/download/v0.12g/raspwn-release.7z">Download as 7Z Archive</a></li>
+</ul>
+<p>The SHA1 hash of the Raspwn 0.12g image is - <strong>c430f184747b915af1954666a17cfcab1de8b29d</strong></p>
+<p>Install is the same as any other image for the Raspberry Pi but the image <em>is</em> only compatible with the Pi 2b and 3b.</p>
+<ul>
+<li>Windows - Use <a href="http://sourceforge.net/projects/win32diskimager/">Win32DiskImager</a> to flash the SD card.  </li>
+<li>MacOS - Use <a href="http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/">Apple Pi Baker</a> to flash with.  </li>
+<li>Linux - Use <a href="http://elinux.org/RPi_Easy_SD_Card_Setup">dd</a> to flash the SD card.  </li>
+</ul>
+<p>On first boot the image will automatically expand to fill the available space on the SD card and reboot.* (ignore any SQL socket error during resize) Once the resize is complete the RasPwn OS
+image is ready to hack! </p>
+<p>Once RasPwn is installed you can <a href="http://raspwn.org/documentation">start hacking it</a>.</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHRwYJKoZIhvcNAQcEoIIHODCCBzQCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYCQ4kxFao7Ha2zRjVbdYtci8ArTSHo7HyjIySGAbNJaZ37fprXq3U1MjTP/XdANEkGIgcSKIgc4GHGDJetiCT8iasQd8Epu18HRIUh72J01ByaHM1cEfOmukZDkCOlXin+k/qAskndPzzCUUQki+n56wAbimJdXFl5DI2ITLyWHyDELMAkGBSsOAwIaBQAwgcQGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIOUw/vhGo+nSAgaDVSbyHhwNqGPbEEwCPtYvRxaGsNDkYaDzxrkulbg7AU/2jSOQbQwE+qagkDeGqXErAffqnTvnoM1EO1fE6iZpVtAFjSUrWsIcJQMkdLoBCR9Cn4tNJEGqrxDbZOqpxDU5YvP/s7V8gtzYUPJtKwoDl74hf7c+heG5jDVK7/lt9xTu1bCPE/Rr67ppLtLOmX+zU6L+Qr6ocg6lwiYEFV5smoIIDhzCCA4MwggLsoAMCAQICAQAwDQYJKoZIhvcNAQEFBQAwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMB4XDTA0MDIxMzEwMTMxNVoXDTM1MDIxMzEwMTMxNVowgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBR07d/ETMS1ycjtkpkvjXZe9k+6CieLuLsPumsJ7QC1odNz3sJiCbs2wC0nLE0uLGaEtXynIgRqIddYCHx88pb5HTXv4SZeuv0Rqq4+axW9PLAAATU8w04qqjaSXgbGLP3NmohqM6bV9kZZwZLR/klDaQGo1u9uDb9lr4Yn+rBQIDAQABo4HuMIHrMB0GA1UdDgQWBBSWn3y7xm8XvVk/UtcKG+wQ1mSUazCBuwYDVR0jBIGzMIGwgBSWn3y7xm8XvVk/UtcKG+wQ1mSUa6GBlKSBkTCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb22CAQAwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQCBXzpWmoBa5e9fo6ujionW1hUhPkOBakTr3YCDjbYfvJEiv/2P+IobhOGJr85+XHhN0v4gUkEDI8r2/rNk1m0GA8HKddvTjyGw/XqXa+LSTlDYkqI8OwR8GEYj4efEtcRpRYBxV8KxAW93YDWzFGvruKnnLbDAF6VR5w/cCMn5hzGCAZowggGWAgEBMIGUMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTYwOTA1MjI1MDMyWjAjBgkqhkiG9w0BCQQxFgQU0sq+yo2sr7QIgFJe8hXE5narItkwDQYJKoZIhvcNAQEBBQAEgYCBS0JR7cGxk6bc9r4AgHxuhd4BorcE99HAqHvIJGgY7+B1XBCeZ1ipjz77tmF9jU+OzcnJycFL2kc9har3+ZBNpRhUw9HrsZWzrRQulRZPEyRB5PZTDzWPvrUU8O6pfZ/SWCxSwsIlsFxtCYwxi6dZA/6Ins2S21bubH4SQfArBg==-----END PKCS7-----
+">
+If you find this project useful and are feeling frisky you might donate.  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form>
+<hr>
+<p><b>* - Note</b> There <i>is</i> a prompt with a delay on the resize, so to prevent SD card expansion, simply boot RasPwn with a monitor and keyboard attached on the first boot, and then just answer <b>n</b> and hit enter <i>when asked whether to expand the filesystem</i>.</p>
+		</div>
+	</div>
+	<div id="footer">Copyright (c) 2016 Raspwn OS
+	</div>
+</div> 
+</body>
+</html>
+￿
