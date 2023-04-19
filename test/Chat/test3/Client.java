@@ -12,7 +12,7 @@ public class Client{
             public void run(){
                 try{
                     // DataInputStream read = new DataInputStream(scoket.getInputStream());
-                    // PrintStream write = new PrintStream(System.out,true);
+                    // PrintStream write = new PrintStream(System.out);
                     cread = new DataInputStream(scoket.getInputStream());
                     twrite = new PrintStream(System.out,true);
                     // String msg="";
@@ -20,11 +20,9 @@ public class Client{
                         msg = cread.readLine();
                         twrite.println("server: "+msg);
                     }
-                    tread.close();
-                    cread.close();
-                    twrite.close();
-                    cwrite.close();
-                    scoket.close();
+                    // cread.close();
+                    // twrite.close();
+                    // scoket.close();
                 }
                 catch(IOException e){
                     System.out.println(e);
@@ -35,19 +33,17 @@ public class Client{
             public void run(){
                 try{
                     // DataInputStream read = new DataInputStream(System.in);
-                    // PrintStream write = new PrintStream(scoket.getOutputStream(),true);
+                    // PrintStream write = new PrintStream(scoket.getOutputStream());
+                    // String msg="";
                     tread = new DataInputStream(System.in);
                     cwrite = new PrintStream(scoket.getOutputStream(),true);
-                    // String msg="";
                     while(!msg.equalsIgnoreCase("bye")){
                         msg = tread.readLine();
                         cwrite.println(msg);
                     }
-                    tread.close();
-                    cread.close();
-                    twrite.close();
-                    cwrite.close();
-                    scoket.close();
+                    // tread.close();
+                    // cwrite.close();
+                    // scoket.close();
                 }
                 catch(IOException e){
                     System.out.println(e);
@@ -56,6 +52,18 @@ public class Client{
         });
         sWrite.start();
         sRead.start();
-        
+        while(true){
+            System.out.print("");
+            if(msg.equalsIgnoreCase("bye")){
+                sRead.stop();
+                cread.close();
+                twrite.close();
+                sWrite.stop();
+                tread.close();
+                cwrite.close();
+                scoket.close();
+                break;
+            }
+        }
     }
 }

@@ -9,28 +9,26 @@ public class Server{
         ServerSocket serverSocket = new ServerSocket(6969);
         Socket client = serverSocket.accept();
         // String msg = "";
-        // DataInputStream cread,tread;
-        // PrintStream cwrite,twrite;
         Thread cRead = new Thread(new Runnable(){
             public void run(){
                 // DataInputStream read;
                 // PrintStream write;
                 try{
+                    // read = new DataInputStream(client.getInputStream());
+                    // write = new PrintStream(System.out);
+                    // String msg="";
                     cread = new DataInputStream(client.getInputStream());
                     twrite = new PrintStream(System.out);
-                    // String msg="";
                     while(!msg.equalsIgnoreCase("bye")){
                         msg = cread.readLine();
                         twrite.println("client: "+msg);
                     }
-                    tread.close();
-                    cread.close();
-                    twrite.close();
-                    cwrite.close();
-                    client.close();
+                    // cread.close();
+                    // twrite.close();
+                    //client.close();
                 }
                 catch(IOException e){
-                    System.out.println(e);
+                    System.out.println(e+"2");
                 }
             }
         });
@@ -39,26 +37,39 @@ public class Server{
                 // DataInputStream read;
                 // PrintStream write;
                 try{
+                    // read = new DataInputStream(System.in);
+                    // write = new PrintStream(client.getOutputStream());
+                    // String msg="";
                     tread = new DataInputStream(System.in);
                     cwrite = new PrintStream(client.getOutputStream());
-                    // String msg="";
                     while(!msg.equalsIgnoreCase("bye")){
                         msg = tread.readLine();
                         cwrite.println(msg);
                     }
-                    tread.close();
-                    cread.close();
-                    twrite.close();
-                    cwrite.close();
-                    client.close();
+                    // tread.close();
+                    // cwrite.close();
+                    // client.close();
                 }
                 catch(IOException e){
-                    System.out.println(e);
+                    System.out.println(e+"1");
                 }
             }
         });
         cRead.start();
         cWrite.start();
+        while(true){
+            System.out.print("");
+            if(msg.equalsIgnoreCase("bye")){
+                cRead.stop();
+                cread.close();
+                twrite.close();
+                cWrite.stop();
+                tread.close();
+                cwrite.close();
+                client.close();
+                break;
+            }
+        }
         
     }
 }
