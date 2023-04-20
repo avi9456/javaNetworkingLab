@@ -12,7 +12,9 @@ public class udpServer{
             dpReceive = new DatagramPacket(receive,receive.length);
             //receive the data in byte buffer
             ds.receive(dpReceive);
-            System.out.println("client:- "+data(receive));
+            // System.out.println("client:- "+data(receive));
+            String msg = new String(receive);
+            System.out.println("client:- "+msg);
             if(data(receive).toString().equals("bye")){
                 System.out.println("client sent bye .........EXITING");
                 break;
